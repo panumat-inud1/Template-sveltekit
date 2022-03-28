@@ -3,13 +3,15 @@
 	import TopAppBar, { Row, Section, Title, AutoAdjust } from '@smui/top-app-bar';
 	import IconButton, { Icon } from '@smui/icon-button';
 	import { t } from '$lib';
- 	export	let topAppBar: TopAppBarComponentDev;
+	export let topAppBar: TopAppBarComponentDev;
 	let initialOn = true;
 
 	//Drawer
 	import Drawer, { AppContent, Content, Header, Subtitle, Scrim } from '@smui/drawer';
 	import List, { Item, Text, Graphic, Separator, Subheader } from '@smui/list';
 	import { H6 } from '@smui/common/elements';
+
+	import LocaleSwitcher from '../component/LocaleSwitcher.svelte';
 
 	let open = false;
 	let setting = false;
@@ -39,7 +41,6 @@
 	</div>
 
 	<Content>
-		
 		<List>
 			<Separator />
 			<Subheader component={H6}>Menu</Subheader>
@@ -74,7 +75,7 @@
 				activated={active === 'calendar'}
 			>
 				<Graphic class="material-icons" aria-hidden="true">movie</Graphic>
-				<Text>Calendar</Text>
+				<Text>{$t('menus.menu4')}</Text>
 			</Item>
 			<Item
 				href="javascript:void(0)"
@@ -82,14 +83,13 @@
 				activated={active === 'test2'}
 			>
 				<Graphic class="material-icons" aria-hidden="true">bathroom</Graphic>
-				<Text>Test2</Text>
+				<Text>{$t('menus.menu5')}</Text>
 			</Item>
 			<Item href="javascript:void(0)" on:click={() => setActive('/')} activated={active === '/'}>
 				<Graphic class="material-icons" aria-hidden="true">login</Graphic>
-				<Text>Exti</Text>
+				<Text>{$t('menus.menu6')}</Text>
 			</Item>
 		</List>
-
 	</Content>
 </Drawer>
 
@@ -106,6 +106,8 @@
 
 			<Section align="end" toolbar>
 				{#if open == false}
+					<p>{$t('user.u')}</p>
+					<LocaleSwitcher />
 					<IconButton toggle bind:pressed={initialOn} title={initialOn ? 'Light on.' : 'Lights of'}>
 						<Icon class="material-icons" on>light</Icon>
 						<Icon class="material-icons">sunny</Icon>
@@ -116,6 +118,8 @@
 				{/if}
 				{#if open == true}
 					<div class="tab-icon">
+					
+						<LocaleSwitcher />
 						<IconButton
 							toggle
 							bind:pressed={initialOn}
@@ -130,20 +134,18 @@
 					</div>
 				{/if}
 			</Section>
-
 		</Row>
 	</TopAppBar>
 </AppContent>
 
 <style>
 	.drawer-head {
-		
 		text-align: right;
 		padding-bottom: 4px;
 	}
 
 	.tab-icon {
-		padding-right:34%;
+		padding-right: 34%;
 	}
 
 	@media only screen and (max-width: 480px) {

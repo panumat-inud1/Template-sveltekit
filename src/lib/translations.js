@@ -23,7 +23,10 @@ export default ({
     menus: {
       menu1: 'Home',
       menu2: 'User',
-      menu3: 'Room'
+      menu3: 'Room',
+      menu4: 'Calendar',
+      menu5: 'Test',
+      menu6: 'Exit'
     },
     login: {
       title: 'Login',
@@ -50,7 +53,8 @@ export default ({
       search: 'Search',
       searchName: 'By Name',
       searchTaxId: 'By TaxID',
-      searchTel: 'By Tel'
+      searchTel: 'By Tel',
+      u: 'Admin'
     },
     room: {
       title: 'Room Number : ',
@@ -94,7 +98,10 @@ export default ({
     menus: {
       menu1: 'หน้าแรก',
       menu2: 'ข้อมูลผู้ใช้งานระบบ',
-      menu3: 'ข้อมูลห้องพัก'
+      menu3: 'ข้อมูลห้องพัก',
+      menu4: 'ปฏิทิน',
+      menu5: 'ทดสอบ',
+      menu6: 'ออกจากระบบ'
     },
     login: {
       title: 'เข้าสู่ระบบ',
@@ -117,7 +124,8 @@ export default ({
       search: 'ค้นหา',
       searchName: 'ชื่อ',
       searchTaxId: 'เลขบัตรประชาชน',
-      searchTel: 'เบอร์โทร'
+      searchTel: 'เบอร์โทร',
+      u: 'ผู้ดูแลระบบ'
     },
     room: {
       title: 'เลขที่ห้อง : ',
